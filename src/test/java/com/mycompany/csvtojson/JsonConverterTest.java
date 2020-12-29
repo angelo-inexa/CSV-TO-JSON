@@ -6,24 +6,22 @@
 package com.mycompany.csvtojson;
 
 import java.io.File;
-import org.junit.After;
-import org.junit.AfterClass;
+import java.io.FileWriter;
 import static org.junit.Assert.assertTrue;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 
 /**
  *
  * @author olivier.baudion
  */
+//@RunWith(Parameterized.class)
 public class JsonConverterTest {
+   
 
-    public JsonConverterTest() {
-    }
-
-    @Before
-    public void setUp() {
+    @BeforeEach
+    public void given() {
         File file = new File("D:/fichier.csv");
         assertTrue(file.exists());
     }
@@ -35,7 +33,8 @@ public class JsonConverterTest {
      */
     @Test
     public void testCreateJsonFile() throws Exception {
-        System.out.println("createJsonFile");
+        
+        FileWriter file = new FileWriter("D:/emp.json");
 
     }
 
@@ -43,14 +42,14 @@ public class JsonConverterTest {
      * Test of displayJsonFile method, of class JsonConverter.
      */
     @Test
-    public void testDisplayJsonFile() throws Exception {
+    public void testDisplayJsonFile()  {
 
         System.out.println("displayJsonFile");
 
     }
-    @After
-    public void tearDown(String path) {
-        File file = new File(path);
+    @AfterEach
+    public void then() {
+        File file = new File("D:/inexa/fichierconverti.json");
         assertTrue(file.exists());
     }
 }

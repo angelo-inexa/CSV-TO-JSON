@@ -57,7 +57,7 @@ public class Main {
         String jsonfilepath=createpath(jsondirectory, jsonfile+".json");
         JsonConverter jsc=new JsonConverter(csvfilepath, jsonfilepath);
         terminal.printf("%s \n  %s", csvfilepath ,jsonfilepath);
-        jsc.createJsonFile();
+        jsc.performConversion();
         terminal.printf("\n ************Conversion Terminée***************** \n");
         jsc.displayJsonFile();
 
